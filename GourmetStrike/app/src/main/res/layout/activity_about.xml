@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pink"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_small">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutNormalTextButton"
+        android:text="A little robot made with Node.js which search the web and find comments made in websites Tripadvisor, FourSquare and generating gourmet descriptions for your next fancy meal. That's a funny joke with words that say nothing like George Orwell exposes in his article Politic and English Language" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutBoldTextButton"
+        android:text="Made open and without drama by:" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutNormalTextButton"
+        android:text="- Guilherme G. Santos (@gui_gsantos)
+- Guilherme Kürten (@darthkurten)
+- Murilo Mafra (@MuriloM)
+- Thiago Grossmann (@garlig)
+- Zeh Fernandes (@zehf)" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutBoldTextButton"
+        android:text="iOS version made by: " />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutNormalTextButton"
+        android:text="- Kaio Medau (@baleiabalao) " />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutBoldTextButton"
+        android:text="Android version made by: " />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutNormalTextButton"
+        android:text="- Gabriel Parelli Francischini (@GaFrancischini) " />
+
+    <TextView
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AboutNormalTextButton"
+        android:text="Thanks to Alexandre Pamplona for helping with english version" />
+
+
+</LinearLayout>

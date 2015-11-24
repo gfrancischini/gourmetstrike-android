@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.StrikeActivity"></activity>
+        <activity android:name=".ui.AboutActivity"></activity>
     </application>
 
 
