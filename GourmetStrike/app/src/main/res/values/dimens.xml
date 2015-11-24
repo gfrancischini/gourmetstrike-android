@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_corner">1dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--Margins and Paddings-->
+    <dimen name="margin">20dp</dimen>
+    <dimen name="margin_bottom">25dp</dimen>
+    <dimen name="margin_top">30dp</dimen>
+
+    <dimen name="margin_minimum">1dp</dimen>
+    <dimen name="margin_micro">2dp</dimen>
+    <dimen name="margin_tiny">3dp</dimen>
+    <dimen name="margin_xxsmall">5dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">14dp</dimen>
+    <dimen name="margin_medium_plus">20dp</dimen>
+    <dimen name="margin_big">24dp</dimen>
+    <dimen name="margin_big_plus">30dp</dimen>
+    <dimen name="margin_xbig">40dp</dimen>
+    <dimen name="margin_xxbig">55dp</dimen>
+
+
+    <!--Font sizes-->
+    <dimen name="font_size_tiny">10sp</dimen>
+    <dimen name="font_size_xxsmall">11sp</dimen>
+    <dimen name="font_size_xsmall">14sp</dimen>
+    <dimen name="font_size_small">20sp</dimen>
+    <dimen name="font_size_medium">22sp</dimen>
+    <dimen name="font_size_big">25sp</dimen>
+    <dimen name="font_size_xbig">30sp</dimen>
+    <dimen name="font_size_xxbig">35sp</dimen>
+    <dimen name="font_size_xxxbig">45sp</dimen>
+    <dimen name="font_size_button">17sp</dimen>
+
+</resources>
