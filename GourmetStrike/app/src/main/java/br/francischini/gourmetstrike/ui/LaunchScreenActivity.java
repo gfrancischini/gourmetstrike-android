@@ -25,13 +25,22 @@ public class LaunchScreenActivity extends BaseActivity {
 
         setContentView(R.layout.activity_launch_screen);
 
+        // user butter knife bind
         ButterKnife.bind(this);
     }
 
+    /**
+     * Setup view (if needed)
+     */
     private void setupView() {
 
     }
 
+    /**
+     * On click strike button we will navigate to next screen
+     * @param view
+     *          The view clicked
+     */
     @OnClick(R.id.strikeButton)
     public void strikeButtonOnClick(View view) {
         Intent intent = new Intent(this, StrikeActivity.class);

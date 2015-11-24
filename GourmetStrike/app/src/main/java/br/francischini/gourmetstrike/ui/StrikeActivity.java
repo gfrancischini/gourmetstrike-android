@@ -18,4 +18,6 @@ public class StrikeActivity extends BaseActivity {
 
         ButterKnife.bind(this);
     }
+
+
 }
