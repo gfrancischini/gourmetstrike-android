@@ -33,7 +33,14 @@
             android:layout_centerVertical="true"
             android:background="@color/pink"
             android:text="Strike me"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:paddingLeft="@dimen/margin_big_plus"
+            android:paddingRight="@dimen/margin_big_plus"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <ImageView
