@@ -44,6 +44,7 @@ public class LaunchScreenActivity extends BaseActivity {
     public void strikeButtonOnClick(View view) {
         Intent intent = new Intent(this, StrikeActivity.class);
         startActivity(intent);
+        this.finish();
     }
 
     /**
