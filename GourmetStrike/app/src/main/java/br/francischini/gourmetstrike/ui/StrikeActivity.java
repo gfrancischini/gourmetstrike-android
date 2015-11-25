@@ -1,13 +1,17 @@
 package br.francischini.gourmetstrike.ui;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import br.francischini.gourmetstrike.R;
@@ -15,6 +19,7 @@ import br.francischini.gourmetstrike.model.Strike;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnLongClick;
 import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 
 /**
@@ -37,6 +42,14 @@ public class StrikeActivity extends BaseActivity {
 
     @Bind(R.id.ptButton)
     RadioButton ptButton;
+
+    @Bind(R.id.relativeLayout)
+    RelativeLayout relativeLayout;
+
+    @Bind(R.id.copyTextView)
+    TextView copyTextView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,11 +116,18 @@ public class StrikeActivity extends BaseActivity {
     public void whatsappButtonOnClick(View view) {
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, wordForFoodTextView.getText() + " " + phraseTextView.getText());
+        sendIntent.putExtra(Intent.EXTRA_TEXT, getCurrentText());
         sendIntent.setType("text/plain");
         // share directly to WhatsApp and bypass the system picker, you can do so by using setPackage in your intent:
         sendIntent.setPackage("com.whatsapp");
         startActivity(sendIntent);
+    }
+
+    /**
+     * @return the current text on screen
+     */
+    private String getCurrentText() {
+        return wordForFoodTextView.getText() + " " + phraseTextView.getText();
     }
 
     /**
@@ -122,9 +142,33 @@ public class StrikeActivity extends BaseActivity {
     }
 
     /**
+     * On long click entire layout button we will copy the text
+     *
+     * @param view The view clicked
+     */
+    @OnLongClick(R.id.relativeLayout)
+    public boolean relativeLayoutOnLongClick(View view) {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("Gourmet Strike", getCurrentText());
+        clipboard.setPrimaryClip(clip);
+
+        copyTextView.setVisibility(View.VISIBLE);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                copyTextView.setVisibility(View.GONE);
+            }
+        }, 2000);
+
+        return true;
+    }
+
+
+    /**
      * Play Shake Animation
-     * @param v
-     *      View element to be shaken
+     *
+     * @param v View element to be shaken
      */
     private void playShakeAnimation(View v) {
         // Create shake effect from xml resource
