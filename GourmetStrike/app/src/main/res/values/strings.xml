@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Gourmet Strike</string>
+
+
+    <string name="strike_formula_1">inicio-frase, adjetivo-vazio, ingrediente, objeto-elogio</string>
+    <string name="strike_formula_2">inicio-frase, adjetivo-chefe, ingrediente, unidade</string>
+    <string name="strike_formula_3">inicio-frase, regional, objeto-elogio</string>
+
+    <string name="strike_words_for_food">This meal, That plate, This Dinner, This Lunch</string>
 </resources>
