@@ -47,7 +47,7 @@
             android:text="THIS LUNCH"
             android:textAllCaps="true"
             android:textColor="@color/brow"
-            android:textSize="26dp" />
+            android:textSize="@dimen/font_size_big" />
 
         <TextView
             android:id="@+id/phraseTextView"
@@ -63,7 +63,7 @@
             android:text="Brings out a magnificient floral aroma"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="36dp" />
+            android:textSize="@dimen/font_size_xbig" />
 
         <Button
             android:id="@+id/newPhraseButton"
