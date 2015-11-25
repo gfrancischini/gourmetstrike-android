@@ -91,6 +91,7 @@ public class StrikeActivity extends BaseActivity {
     @OnClick(R.id.newPhraseButton)
     public void newPhraseButtonOnClick(View view) {
         generatePhrase();
+        playShakeAnimation(phraseTextView);
     }
 
     /**
@@ -120,5 +121,17 @@ public class StrikeActivity extends BaseActivity {
         startActivity(intent);
     }
 
+    /**
+     * Play Shake Animation
+     * @param v
+     *      View element to be shaken
+     */
+    private void playShakeAnimation(View v) {
+        // Create shake effect from xml resource
+        Animation shake = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+
+        // Perform animation
+        v.startAnimation(shake);
+    }
 
 }
