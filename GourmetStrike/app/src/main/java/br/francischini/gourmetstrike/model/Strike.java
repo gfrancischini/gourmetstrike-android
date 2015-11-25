@@ -54,7 +54,7 @@ public class Strike {
      *
      * @param context
      */
-    public Strike(Context context) {
+    public Strike(String language, Context context) {
         this.context = context;
 
         loadConfig();

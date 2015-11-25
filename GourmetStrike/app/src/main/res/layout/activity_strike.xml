@@ -69,7 +69,7 @@
             android:id="@+id/newPhraseButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/button3"
+            android:layout_above="@+id/whatsappButton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="@dimen/margin_small"
@@ -81,7 +81,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/whatsappButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

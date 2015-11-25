@@ -6,19 +6,22 @@
     android:orientation="horizontal">
 
     <RadioButton
+        android:id="@+id/enButton"
         android:button="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/language_button"
         android:text="EN"
+        android:checked="true"
         android:layout_marginRight="@dimen/margin_tiny"
         style="@style/TextButton"/>
 
     <RadioButton
+        android:id="@+id/ptButton"
         android:button="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/language_button"
         android:text="PT"
         style="@style/TextButton"/>
 </RadioGroup>
