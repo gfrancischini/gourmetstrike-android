@@ -3,6 +3,9 @@ package br.francischini.gourmetstrike.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import br.francischini.gourmetstrike.R;
@@ -23,6 +26,10 @@ public class StrikeActivity extends BaseActivity {
     @Bind(R.id.phraseTextView)
     TextView phraseTextView;
 
+    @Bind(R.id.armImageView)
+    ImageView armImageView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,10 @@ public class StrikeActivity extends BaseActivity {
         strike = new Strike(this);
 
         generatePhrase();
+
+
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        armImageView.startAnimation(animation);
     }
 
     public void generatePhrase() {

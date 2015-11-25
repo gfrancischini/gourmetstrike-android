@@ -7,6 +7,17 @@
     android:orientation="vertical"
     tools:ignore="MissingPrefix">
 
+    <ImageView
+        android:id="@+id/armImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/relativeLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="120dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/arm" />
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
@@ -25,8 +36,14 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/headerLayout"
+            android:layout_marginLeft="@dimen/margin_xxsmall"
             android:layout_marginTop="@dimen/margin_medium"
             android:background="@color/white"
+            android:paddingBottom="@dimen/margin_xxsmall"
+            android:paddingLeft="@dimen/margin_small"
+            android:paddingRight="@dimen/margin_small"
+            android:paddingTop="@dimen/margin_xxsmall"
+            android:rotation="-5"
             android:text="THIS LUNCH"
             android:textAllCaps="true"
             android:textColor="@color/brow"
@@ -40,7 +57,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/wordForFoodTextView"
+            android:layout_marginLeft="@dimen/margin_small"
             android:layout_marginTop="2dp"
+            android:rotation="-5"
             android:text="Brings out a magnificient floral aroma"
             android:textAllCaps="true"
             android:textColor="@color/white"
@@ -53,6 +72,8 @@
             android:layout_above="@+id/button3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
             android:background="@drawable/button_new_phrase"
             android:text="NEW PHRASE"
             android:textColor="@color/white"
@@ -66,6 +87,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_whatsapp"
             android:text="WHATSAPP"
@@ -74,15 +97,5 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/relativeLayout"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="166dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/arm" />
 
 </RelativeLayout>

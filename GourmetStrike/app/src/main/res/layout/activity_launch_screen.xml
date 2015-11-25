@@ -17,12 +17,12 @@
             layout="@layout/module_header" />
 
         <ImageView
+            android:layout_marginTop="@dimen/margin_xbig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/logo"
             android:layout_below="@+id/headerLayout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="106dp"
-            android:src="@drawable/logo" />
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:id="@+id/strikeButton"
@@ -47,6 +47,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:scaleType="fitCenter"
+        android:scaleType="fitEnd"
         android:src="@drawable/persona_iphone" />
 </RelativeLayout>
