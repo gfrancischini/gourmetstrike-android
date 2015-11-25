@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import br.francischini.gourmetstrike.R;
-import br.francischini.model.Strike;
+import br.francischini.gourmetstrike.model.Strike;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

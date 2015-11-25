@@ -1,4 +1,4 @@
-package br.francischini.model;
+package br.francischini.gourmetstrike.model;
 
 import android.content.Context;
 
