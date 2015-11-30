@@ -3,16 +3,27 @@ package br.francischini.gourmetstrike.ui;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
+
+import java.io.ByteArrayOutputStream;
 
 import br.francischini.gourmetstrike.R;
 import br.francischini.gourmetstrike.model.Strike;
@@ -20,6 +31,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
+import jp.wasabeef.glide.transformations.BlurTransformation;
 import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 
 /**
@@ -49,6 +61,11 @@ public class StrikeActivity extends BaseActivity {
     @Bind(R.id.copyTextView)
     TextView copyTextView;
 
+    @Bind(R.id.bitmapFrameLayout)
+    RelativeLayout bitmapFrameLayout;
+
+    @Bind(R.id.bitmapImageView)
+    ImageView bitmapImageView;
 
 
     @Override
@@ -154,10 +171,13 @@ public class StrikeActivity extends BaseActivity {
 
         copyTextView.setVisibility(View.VISIBLE);
 
+        showBlurrImage();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 copyTextView.setVisibility(View.GONE);
+                bitmapImageView.setVisibility(View.GONE);
             }
         }, 2000);
 
@@ -176,6 +196,30 @@ public class StrikeActivity extends BaseActivity {
 
         // Perform animation
         v.startAnimation(shake);
+    }
+
+
+    private void showBlurrImage() {
+        bitmapFrameLayout.setDrawingCacheEnabled(true);
+        bitmapFrameLayout.buildDrawingCache();
+        Bitmap bmp = bitmapFrameLayout.getDrawingCache();
+
+        bitmapImageView.setVisibility(View.VISIBLE);
+
+
+        //set the background image with the video frame grabbed while we do the blur transformation
+        bitmapImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        bitmapImageView.setImageBitmap(bmp);
+
+        //convert the image into a byte array used by Glide
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        Glide.with(this).load(byteArray).bitmapTransform(new BlurTransformation(this, 25))
+                .into(bitmapImageView);
+
+        bitmapImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
 }

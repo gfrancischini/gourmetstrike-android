@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/brow</item>
         <item name="colorPrimaryDark">@color/brow</item>
         <item name="colorAccent">@color/brow</item>
+        <item name="android:windowBackground">@color/brow</item>
     </style>
 
     <style name="TextButton">

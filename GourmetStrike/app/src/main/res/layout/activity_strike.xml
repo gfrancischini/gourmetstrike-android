@@ -4,123 +4,136 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/brow"
-    android:orientation="vertical"
-    tools:ignore="MissingPrefix"
     android:clipChildren="false"
-    android:clipToPadding="false">
-
-    <ImageView
-        android:id="@+id/armImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/relativeLayout"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="120dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/arm" />
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    tools:ignore="MissingPrefix">
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/bitmapFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/armImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relativeLayout"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="120dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arm" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_marginRight="@dimen/margin_small">
+
+            <include
+                android:id="@+id/headerLayout"
+                layout="@layout/module_header" />
+
+            <TextView
+                android:id="@+id/wordForFoodTextView"
+                fontPath="ProximaNova-Bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/headerLayout"
+                android:layout_marginLeft="@dimen/margin_xxsmall"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/margin_xxsmall"
+                android:paddingLeft="@dimen/margin_small"
+                android:paddingRight="@dimen/margin_small"
+                android:paddingTop="@dimen/margin_xxsmall"
+                android:rotation="-5"
+                android:text="THIS LUNCH"
+                android:textAllCaps="true"
+                android:textColor="@color/brow"
+                android:textSize="@dimen/font_size_big" />
+
+            <TextView
+                android:id="@+id/phraseTextView"
+                fontPath="ProximaNova-Bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/wordForFoodTextView"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="2dp"
+                android:rotation="-5"
+                android:text="Brings out a magnificient floral aroma"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_xbig" />
+
+            <Button
+                android:id="@+id/newPhraseButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/whatsappButton"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:background="@drawable/button_new_phrase"
+                android:text="NEW PHRASE"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_xsmall"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/whatsappButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_whatsapp"
+                android:text="WHATSAPP"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_size_xsmall"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/bitmapImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/margin_small"
-        android:layout_marginLeft="@dimen/margin_small"
-        android:layout_marginRight="@dimen/margin_small">
+        android:visibility="gone"/>
 
-        <include
-            android:id="@+id/headerLayout"
-            layout="@layout/module_header" />
-
-        <TextView
-            android:id="@+id/wordForFoodTextView"
-            fontPath="ProximaNova-Bold.ttf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/headerLayout"
-            android:layout_marginLeft="@dimen/margin_xxsmall"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:background="@color/white"
-            android:paddingBottom="@dimen/margin_xxsmall"
-            android:paddingLeft="@dimen/margin_small"
-            android:paddingRight="@dimen/margin_small"
-            android:paddingTop="@dimen/margin_xxsmall"
-            android:rotation="-5"
-            android:text="THIS LUNCH"
-            android:textAllCaps="true"
-            android:textColor="@color/brow"
-            android:textSize="@dimen/font_size_big" />
-
-        <TextView
-            android:id="@+id/phraseTextView"
-            fontPath="ProximaNova-Bold.ttf"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/wordForFoodTextView"
-            android:layout_marginLeft="@dimen/margin_small"
-            android:layout_marginTop="2dp"
-            android:rotation="-5"
-            android:text="Brings out a magnificient floral aroma"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_size_xbig" />
-
-        <Button
-            android:id="@+id/newPhraseButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/whatsappButton"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="@dimen/margin_small"
-            android:layout_marginRight="@dimen/margin_small"
-            android:background="@drawable/button_new_phrase"
-            android:text="NEW PHRASE"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_size_xsmall"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/whatsappButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="@dimen/margin_small"
-            android:layout_marginRight="@dimen/margin_small"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_whatsapp"
-            android:text="WHATSAPP"
-            android:textColor="@color/white"
-            android:textSize="@dimen/font_size_xsmall"
-            android:textStyle="bold" />
-
-
-    </RelativeLayout>
     <TextView
-        android:visibility="gone"
-        android:layout_marginLeft="-50dp"
-        android:layout_marginRight="-50dp"
         android:id="@+id/copyTextView"
+        fontPath="ProximaNova-Bold.ttf"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="COPIED"
-        android:padding="10dp"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:background="@color/pink"
-        fontPath="ProximaNova-Bold.ttf"
-        android:rotation="-10"
-        android:textSize="@dimen/font_size_xxbig"
-        android:layout_marginTop="75dp"
-        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="-50dp"
+        android:layout_marginRight="-50dp"
+        android:layout_marginTop="75dp"
+        android:background="@color/pink"
+        android:gravity="center"
+        android:padding="10dp"
+        android:rotation="-10"
+        android:text="COPIED"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_xxbig"
+        android:visibility="gone" />
 </RelativeLayout>
