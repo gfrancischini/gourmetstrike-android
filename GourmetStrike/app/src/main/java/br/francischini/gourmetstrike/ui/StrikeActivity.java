@@ -1,5 +1,6 @@
 package br.francischini.gourmetstrike.ui;
 
+import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
@@ -9,11 +10,10 @@ import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -26,7 +26,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnLongClick;
 import jp.wasabeef.glide.transformations.BlurTransformation;
-import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 
 /**
  * Created by gabriel on 11/24/15.
@@ -129,7 +128,12 @@ public class StrikeActivity extends LanguageActivity {
         sendIntent.setType("text/plain");
         // share directly to WhatsApp and bypass the system picker, you can do so by using setPackage in your intent:
         sendIntent.setPackage("com.whatsapp");
-        startActivity(sendIntent);
+
+        try {
+            startActivity(sendIntent);
+        } catch (ActivityNotFoundException exception) {
+            Toast.makeText(this, "Whatsapp not installed", Toast.LENGTH_LONG).show();
+        }
     }
 
     /**
