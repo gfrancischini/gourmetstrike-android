@@ -17,9 +17,9 @@ import br.francischini.util.FileUtils;
  * Created by gabriel on 11/24/15.
  */
 public class Strike {
-    private static final String STRIKE_CONFIG_FILE_PATH = "json/config_en.json";
-    private static final String STRIKE_WORDS_FILE_PATH = "json/words_en.json";
-    Random r = new Random();
+    private static final String STRIKE_JSON_PATH = "json/";
+    private static final String STRIKE_CONFIG_FILE_NAME = "config.json";
+    private static final String STRIKE_WORDS_FILE_NAME = "words.json";
 
     private enum CATEGORY {
         ADJETIVO_CHEFE,
@@ -31,6 +31,15 @@ public class Strike {
         UNIDADE
     }
 
+    /**
+     * The current strike language
+     */
+    String language;
+
+    /**
+     * Random class
+     */
+    Random r = new Random();
 
     /**
      * The formulas to create the phrases
@@ -56,16 +65,30 @@ public class Strike {
      */
     public Strike(String language, Context context) {
         this.context = context;
-
+        this.language = language;
         loadConfig();
         loadWords();
+    }
+
+    /**
+     * @return the config file path at assets folder
+     */
+    private String getConfigFilePath() {
+        return STRIKE_JSON_PATH + language + "/" + STRIKE_CONFIG_FILE_NAME;
+    }
+
+    /**
+     * @return the word file path at assets folder
+     */
+    private String getWordsFilePath() {
+        return STRIKE_JSON_PATH + language + "/" + STRIKE_WORDS_FILE_NAME;
     }
 
     /**
      * Loads the configuration to create new phrases
      */
     private void loadConfig() {
-        String fileText = FileUtils.loadJSONFromAsset(STRIKE_CONFIG_FILE_PATH, context);
+        String fileText = FileUtils.loadJSONFromAsset(getConfigFilePath(), context);
 
         try {
             JSONObject jsonObject = new JSONObject(fileText);
@@ -91,7 +114,7 @@ public class Strike {
      * Loads the words to create new phrases
      */
     private void loadWords() {
-        String fileText = FileUtils.loadJSONFromAsset(STRIKE_WORDS_FILE_PATH, context);
+        String fileText = FileUtils.loadJSONFromAsset(getWordsFilePath(), context);
 
         try {
             JSONObject jsonObject = new JSONObject(fileText);
@@ -110,16 +133,29 @@ public class Strike {
 
     }
 
+    /**
+     *
+     * @return a random word for food
+     */
     private String randomWordForFood() {
         int index = r.nextInt(wordsForFoods.size() - 1);
         return wordsForFoods.get(index);
     }
 
+    /**
+     *
+     * @return a random phrase
+     */
     private String randomPhrase() {
         int index = r.nextInt(formulas.size() - 1);
         return formulas.get(index);
     }
 
+    /**
+     * Create a random phrase based on a fomula
+     * @param formula The formula to create the phrase
+     * @return a complete gourmet phrase
+     */
     private String phraseForFormula(String formula) {
         String[] categories = formula.split(",");
         String phrase = "";
@@ -130,11 +166,18 @@ public class Strike {
         return phrase;
     }
 
-
+    /**
+     *
+     * @return a gourmet phrase
+     */
     public String getPhrase() {
         return phraseForFormula(randomPhrase());
     }
 
+    /**
+     *
+     * @return a gourmet woord for food
+     */
     public String getWordForFood() {
         return randomWordForFood();
     }

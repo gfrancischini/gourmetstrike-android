@@ -100,12 +100,18 @@ public class StrikeActivity extends BaseActivity {
             }
             buttonView.setTypeface(TypefaceUtils.load(getAssets(), font));
 
-            changeTextLanguage("en");
+            if(buttonView == enButton && isChecked == true) {
+                changeTextLanguage("en");
+            }
+            else if (buttonView == ptButton && isChecked == true){
+                changeTextLanguage("pt");
+            }
         }
     };
 
     private void changeTextLanguage(String language) {
         strike = new Strike(language, this);
+        generatePhrase();
     }
 
     private void generatePhrase() {

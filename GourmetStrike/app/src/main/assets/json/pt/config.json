@@ -1,0 +1,4 @@
+{
+  "FORMULA": ["INICIO_FRASE,ADJETIVO_VAZIO,INGREDIENTE,OBJETO_ELOGIO,INGREDIENTE", "INICIO_FRASE,UNIDADE,ADJETIVO_CHEFE,INGREDIENTE", "INICIO_FRASE,OBJETO_ELOGIO,REGIONAL"],
+  "WORDS_FOR_FOOD": ["Esta comida", "Este prato", "Essa refeição", "Este jantar", "Este almoço", "Essa ceia", "Esse desjejum"]
+}
