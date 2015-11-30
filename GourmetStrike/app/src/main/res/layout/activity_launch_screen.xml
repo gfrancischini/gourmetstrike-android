@@ -40,7 +40,7 @@
             android:paddingLeft="@dimen/margin_big_plus"
             android:paddingRight="@dimen/margin_big_plus"
             android:paddingTop="@dimen/margin_medium"
-            android:text="Generate Description"
+            android:text="@string/strike_button"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="18dp"

@@ -20,51 +20,51 @@
             style="@style/AboutNormalTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A little robot made with Node.js which search the web and find comments made in websites Tripadvisor, FourSquare and generating gourmet descriptions for your next fancy meal. That's a funny joke with words that say nothing like George Orwell exposes in his article Politic and English Language" />
+            android:text="@string/about_main" />
 
 
         <TextView
             style="@style/AboutBoldTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Made open and without drama by:" />
+            android:text="@string/made_by_title" />
 
         <TextView
             style="@style/AboutNormalTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="- Guilherme G. Santos (@gui_gsantos)\n- Guilherme Kürten (@darthkurten)\n- Murilo Mafra (@MuriloM)\n- Thiago Grossmann (@garlig)\n- Zeh Fernandes (@zehf)" />
+            android:text="@string/made_by_authors" />
 
         <TextView
             style="@style/AboutBoldTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="iOS version made by: " />
+            android:text="@string/made_by_ios_title" />
 
         <TextView
             style="@style/AboutNormalTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="- Kaio Medau (@baleiabalao) " />
+            android:text="@string/made_by_ios_authors" />
 
         <TextView
             style="@style/AboutBoldTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android version made by: " />
+            android:text="@string/made_by_android_title" />
 
         <TextView
             style="@style/AboutNormalTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="- Gabriel Parelli Francischini (@GaFrancischini) " />
+            android:text="@string/made_by_android_authors" />
 
         <TextView
             style="@style/AboutNormalTextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="Thanks to Alexandre Pamplona for helping with english version" />
+            android:text="@string/translate_by" />
 
     </LinearLayout>
 

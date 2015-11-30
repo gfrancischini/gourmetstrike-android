@@ -4,24 +4,18 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.drawable.GlideDrawable;
-import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.target.Target;
 
 import java.io.ByteArrayOutputStream;
 
@@ -37,7 +31,7 @@ import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 /**
  * Created by gabriel on 11/24/15.
  */
-public class StrikeActivity extends BaseActivity {
+public class StrikeActivity extends LanguageActivity {
     Strike strike;
 
     @Bind(R.id.wordForFoodTextView)
@@ -48,12 +42,6 @@ public class StrikeActivity extends BaseActivity {
 
     @Bind(R.id.armImageView)
     ImageView armImageView;
-
-    @Bind(R.id.enButton)
-    RadioButton enButton;
-
-    @Bind(R.id.ptButton)
-    RadioButton ptButton;
 
     @Bind(R.id.relativeLayout)
     RelativeLayout relativeLayout;
@@ -76,44 +64,42 @@ public class StrikeActivity extends BaseActivity {
 
         ButterKnife.bind(this);
 
-        strike = new Strike("en", this);
+        strike = new Strike(this.getCurrentLanguage(), this);
+
+        configureLanguage();
 
         generatePhrase();
+        runEnterAnimation();
 
-
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
-        armImageView.startAnimation(animation);
-
-
-        enButton.setOnCheckedChangeListener(onCheckedChangeListener);
-        ptButton.setOnCheckedChangeListener(onCheckedChangeListener);
-        enButton.setChecked(true);
-        onCheckedChangeListener.onCheckedChanged(enButton, true);
+        this.setLanguageListener(new LanguageListener() {
+            @Override
+            public void onLanguageChanged(String language) {
+                changeTextLanguage(language);
+            }
+        });
     }
 
-    CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String font = "ProximaNova-Regular.ttf";
-            if (isChecked) {
-                font = "ProximaNova-Bold.ttf";
-            }
-            buttonView.setTypeface(TypefaceUtils.load(getAssets(), font));
+    /**
+     *
+     */
+    private void runEnterAnimation() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
+        armImageView.startAnimation(animation);
+    }
 
-            if(buttonView == enButton && isChecked == true) {
-                changeTextLanguage("en");
-            }
-            else if (buttonView == ptButton && isChecked == true){
-                changeTextLanguage("pt");
-            }
-        }
-    };
 
+    /**
+     * @param language
+     */
     private void changeTextLanguage(String language) {
         strike = new Strike(language, this);
         generatePhrase();
     }
 
+
+    /**
+     *
+     */
     private void generatePhrase() {
         wordForFoodTextView.setText(strike.getWordForFood());
         phraseTextView.setText(strike.getPhrase());
@@ -204,14 +190,15 @@ public class StrikeActivity extends BaseActivity {
         v.startAnimation(shake);
     }
 
-
+    /**
+     * Compute and show the blurr image
+     */
     private void showBlurrImage() {
         bitmapFrameLayout.setDrawingCacheEnabled(true);
         bitmapFrameLayout.buildDrawingCache();
         Bitmap bmp = bitmapFrameLayout.getDrawingCache();
 
         bitmapImageView.setVisibility(View.VISIBLE);
-
 
         //set the background image with the video frame grabbed while we do the blur transformation
         bitmapImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);

@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Gourmet Strike</string>
 
-
-    <string name="strike_formula_1">inicio-frase, adjetivo-vazio, ingrediente, objeto-elogio</string>
-    <string name="strike_formula_2">inicio-frase, adjetivo-chefe, ingrediente, unidade</string>
-    <string name="strike_formula_3">inicio-frase, regional, objeto-elogio</string>
-
-    <string name="strike_words_for_food">This meal, That plate, This Dinner, This Lunch</string>
+    <string name="about_main">A little robot made with Node.js which search the web and find comments made in websites Tripadvisor, FourSquare and generating gourmet descriptions for your next fancy meal. That\'s a funny joke with words that say nothing like George Orwell exposes in his article Politic and English Language</string>
+    <string name="made_by_title">Made open and without drama by:</string>
+    <string name="made_by_authors">- Guilherme G. Santos (@gui_gsantos)\n- Guilherme Kürten (@darthkurten)\n- Murilo Mafra (@MuriloM)\n- Thiago Grossmann (@garlig)\n- Zeh Fernandes (@zehf)</string>
+    <string name="made_by_ios_title">iOS version made by:</string>
+    <string name="made_by_ios_authors">- Kaio Medau (@baleiabalao)</string>
+    <string name="made_by_android_title">Android version made by:</string>
+    <string name="made_by_android_authors">- Gabriel Parelli Francischini (@GaFrancischini)</string>
+    <string name="translate_by">Thanks to Alexandre Pamplona for helping with english version</string>
+    <string name="strike_button">Generate Description</string>
+    <string name="whatsapp_button">WHATSAPP</string>
+    <string name="new_phrase_button">NEW PHRASE</string>
+    <string name="about_button">About</string>
 </resources>

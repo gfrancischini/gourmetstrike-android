@@ -17,7 +17,7 @@ import uk.co.chrisjenx.calligraphy.TypefaceUtils;
 /**
  * Created by gabriel on 11/24/15.
  */
-public class LaunchScreenActivity extends BaseActivity {
+public class LaunchScreenActivity extends LanguageActivity {
     @Bind(R.id.strikeButton)
     Button strikeButton;
 
@@ -36,36 +36,7 @@ public class LaunchScreenActivity extends BaseActivity {
         // user butter knife bind
         ButterKnife.bind(this);
 
-
-        enButton.setOnCheckedChangeListener(onCheckedChangeListener);
-        ptButton.setOnCheckedChangeListener(onCheckedChangeListener);
-        enButton.setChecked(true);
-        onCheckedChangeListener.onCheckedChanged(enButton, true);
-    }
-
-    CompoundButton.OnCheckedChangeListener onCheckedChangeListener = new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            String font = "ProximaNova-Regular.ttf";
-            if (isChecked) {
-                font = "ProximaNova-Bold.ttf";
-            }
-            buttonView.setTypeface(TypefaceUtils.load(getAssets(), font));
-
-            changeTextLanguage("en");
-        }
-    };
-
-    private void changeTextLanguage(String language) {
-        // save to preferences
-        //strike = new Strike(language, this);
-    }
-
-    /**
-     * Setup view (if needed)
-     */
-    private void setupView() {
-
+        configureLanguage();
     }
 
     /**

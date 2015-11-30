@@ -84,7 +84,7 @@
                 android:layout_marginLeft="@dimen/margin_small"
                 android:layout_marginRight="@dimen/margin_small"
                 android:background="@drawable/button_new_phrase"
-                android:text="NEW PHRASE"
+                android:text="@string/new_phrase_button"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_size_xsmall"
                 android:textStyle="bold" />
@@ -100,7 +100,7 @@
                 android:layout_marginRight="@dimen/margin_small"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/button_whatsapp"
-                android:text="WHATSAPP"
+                android:text="@string/whatsapp_button"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_size_xsmall"
                 android:textStyle="bold" />

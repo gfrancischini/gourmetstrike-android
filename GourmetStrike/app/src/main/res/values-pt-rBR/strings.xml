@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Gourmet Strike</string>
+
+    <string name="about_main">Um pequeno robôs feito com Node.js que analisa resenhas de restaurantes feito em sites como Tripadvisor e FourSquare gerando elogios gourmet para sua próxima refeição. Um misto de dizer nada, escondido por palavras sofisticadas como disse George Orwell no ensaio Política e Lingua Inglesa</string>
+    <string name="made_by_title">Feito abertamente e sem compromisso por:</string>
+    <string name="made_by_authors">- Guilherme G. Santos (@gui_gsantos)\n- Guilherme Kürten (@darthkurten)\n- Murilo Mafra (@MuriloM)\n- Thiago Grossmann (@garlig)\n- Zeh Fernandes (@zehf)</string>
+    <string name="made_by_ios_title">Versão iOS feita por:</string>
+    <string name="made_by_ios_authors">- Kaio Medau (@baleiabalao)</string>
+    <string name="made_by_android_title">Versão Android feita por:</string>
+    <string name="made_by_android_authors">- Gabriel Parelli Francischini (@GaFrancischini)</string>
+    <string name="translate_by">Agradecimentos ao Alexandre Pamplona por ajudar na versão em inglês</string>
+    <string name="strike_button">Gerar Elogio</string>
+    <string name="whatsapp_button">WHATSAPP</string>
+    <string name="new_phrase_button">OUTRO ELOGIO</string>
+    <string name="about_button">Sobre</string>
+</resources>

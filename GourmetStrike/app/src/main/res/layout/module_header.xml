@@ -12,6 +12,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:text="About"
+        android:text="@string/about_button"
         style="@style/TextButton"/>
 </RelativeLayout>
